@@ -83,5 +83,6 @@ namespace Library
                 Console.WriteLine("Ingrese un valor entre 1 y 5");
             }
         }
+        public abstract void EndTrip();
     }
 }
