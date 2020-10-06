@@ -1,10 +1,24 @@
 using System;
 using Library;
+using System.Collections.Generic;
 
 namespace Library
 {
     public abstract class Person
     {
+        private List<int> rating = new List<int>();
+        public int Rating
+        {
+            get
+            {
+                int totalRating = 0;
+                foreach (int ratings in rating)
+                {
+                    totalRating += ratings;
+                }
+                return (totalRating / (rating.Count));
+            }
+        }
         private string name;
         public string Name
         {
@@ -58,6 +72,16 @@ namespace Library
             this.Surname = surname;
             this.ID = id;
         }
-        public abstract int Rating();
+        public void AddRating(int value)
+        {
+            if (value <= 5 && value >= 1)
+            {
+                rating.Add(value);
+            }
+            else
+            {
+                Console.WriteLine("Ingrese un valor entre 1 y 5");
+            }
+        }
     }
 }
