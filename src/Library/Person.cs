@@ -3,7 +3,7 @@ using Library;
 
 namespace Library
 {
-    public class Person
+    public abstract class Person
     {
         private string name;
         public string Name
@@ -58,5 +58,6 @@ namespace Library
             this.Surname = surname;
             this.ID = id;
         }
+        public abstract int Rating();
     }
 }
