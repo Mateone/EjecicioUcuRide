@@ -6,5 +6,9 @@ namespace Library
         :base (name, surname, id)
         {
         }
+        public override void EndTrip()
+        {
+            
+        }
     }
 }
