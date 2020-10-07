@@ -27,10 +27,10 @@ namespace Library
             }
         }
 
-        public void RemovePassenger(Passanger passenger)
+        public void RemovePassenger(Passanger passenger, int rate)
         {
             passengers.Remove(passenger);
-            // De alguna manera, pedir Rating       
+            passenger.AddRating(rate);
         }
     }
 
