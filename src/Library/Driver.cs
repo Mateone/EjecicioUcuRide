@@ -8,7 +8,7 @@ namespace Library
 
         private int capacity;
 
-        public List<Passanger> passengers;
+        public List<Passenger> passengers;
 
 
         public int Capacity {get; set;}
@@ -19,7 +19,7 @@ namespace Library
         }
 
 
-        public void AddPassenger(Passanger newPassenger)
+        public void AddPassenger(Passenger newPassenger)
         {
             if (this.Capacity > passengers.Count)
             {
@@ -27,9 +27,13 @@ namespace Library
             }
         }
 
-        public void RemovePassenger(Passanger passenger, int rating)
+        public void RemovePassenger(Passenger passenger, int rating)
         {
             passengers.Remove(passenger);
+            passenger.AddRating(rating);
+        }
+        public void RatePassanger(Passenger passenger, int rating)
+        {
             passenger.AddRating(rating);
         }
     }
