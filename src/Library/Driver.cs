@@ -30,12 +30,11 @@ namespace Library
         public void RemovePassenger(Passenger passenger, int rating)
         {
             passengers.Remove(passenger);
-            passenger.AddRating(rating);
+            RatePassenger(passenger, rating);
         }
-        public void RatePassanger(Passenger passenger, int rating)
+        public void RatePassenger(Passenger passenger, int rating)
         {
             passenger.AddRating(rating);
         }
     }
-
 }
