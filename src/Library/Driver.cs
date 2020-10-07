@@ -14,7 +14,7 @@ namespace Library
         public int Capacity {get; set;}
         public Driver(string name, string surname, string id, int capacity)
         : base (name,surname, id)
-        {     
+        {
             this.Capacity = capacity;
         }
 
@@ -27,10 +27,10 @@ namespace Library
             }
         }
 
-        public void RemovePassenger(Passanger passenger)
+        public void RemovePassenger(Passanger passenger, int rating)
         {
             passengers.Remove(passenger);
-            // De alguna manera, pedir Rating       
+            passenger.AddRating(rating);
         }
     }
 
