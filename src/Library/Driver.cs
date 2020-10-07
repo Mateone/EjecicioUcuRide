@@ -5,15 +5,33 @@ namespace Library
 {
     public class Driver : Person
     {
-        public Driver(string name, string surname, string id)
+
+        private int capacity;
+
+        public List<Passanger> passengers;
+
+
+        public int Capacity {get; set;}
+        public Driver(string name, string surname, string id, int capacity)
         : base (name,surname, id)
         {     
+            this.Capacity = capacity;
         }
 
-        public override int Rating()
+
+        public void AddPassenger(Passanger newPassenger)
         {
-            return 1;
+            if (this.Capacity > passengers.Count)
+            {
+                passengers.Add(newPassenger);
+            }
         }
 
+        public void RemovePassenger(Passanger passenger)
+        {
+            passengers.Remove(passenger);
+            // De alguna manera, pedir Rating       
+        }
     }
+
 }
