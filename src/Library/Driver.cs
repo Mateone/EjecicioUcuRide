@@ -9,7 +9,7 @@ namespace Library
     {
         private string bio;
         public string Bio
-        {    
+        {
             get
             {
                 return this.bio;
@@ -22,12 +22,11 @@ namespace Library
                     this.bio = value;
                 }
             }
-        
         }
 
         private int capacity;
-        public int Capacity 
-        {    
+        public int Capacity
+        {
             get
             {
                 return this.capacity;
@@ -35,17 +34,12 @@ namespace Library
 
             set
             {
-                this.Capacity = value; 
+                this.Capacity = value;
             }
-        
         }
-        
-        
         public List<Passenger> passengers;
-
-    
-        public Driver(string name, string surname, string id, int capacity, string bio)
-        : base (name,surname, id)
+        public Driver(string name, string surname, string id, string imagePath, int capacity, string bio)
+        : base (name,surname, id, imagePath)
         {
             this.Capacity = capacity;
             this.Bio = bio;
