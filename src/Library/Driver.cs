@@ -63,7 +63,7 @@ namespace Library
 
             set
             {
-                this.Capacity = value;
+                this.capacity = value;
             }
         }
         public List<Passenger> passengers;
@@ -74,6 +74,12 @@ namespace Library
             this.Bio = bio;
         }
 
+        public Driver(string name, string surname, string id, string imagePath, string bio)
+        : base (name,surname, id, imagePath)
+        {
+            this.Bio = bio;
+            this.Capacity = 1;
+        }
 
         public void AddPassenger(Passenger newPassenger)
         {
