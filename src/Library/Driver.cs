@@ -12,8 +12,8 @@ namespace Library
 
 
         public int Capacity {get; set;}
-        public Driver(string name, string surname, string id, int capacity)
-        : base (name,surname, id)
+        public Driver(string name, string surname, string id, string imagePath, int capacity)
+        : base (name,surname, id, imagePath)
         {
             this.Capacity = capacity;
         }

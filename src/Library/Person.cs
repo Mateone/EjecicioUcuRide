@@ -6,6 +6,21 @@ namespace Library
 {
     public abstract class Person
     {
+        private string imagePath;
+        public string ImagePath
+        {
+            get
+            {
+                return this.imagePath;
+            }
+            set
+            {
+                if(!String.IsNullOrWhiteSpace(value))
+                {
+                    this.imagePath = value;
+                }
+            }
+        }
         private List<int> rating = new List<int>();
         public int Rating
         {
@@ -66,11 +81,12 @@ namespace Library
             }
         }
 
-        public Person(string name, string surname, string id)
+        public Person(string name, string surname, string id, string imagePath)
         {
             this.Name = name;
             this.Surname = surname;
             this.ID = id;
+            this.ImagePath = imagePath;
         }
         public void AddRating(int value)
         {
