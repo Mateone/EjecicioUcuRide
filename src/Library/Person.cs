@@ -6,21 +6,9 @@ namespace Library
 {
     public abstract class Person
     {
-        private string imagePath;
-        public string ImagePath
-        {
-            get
-            {
-                return this.imagePath;
-            }
-            set
-            {
-                if(!String.IsNullOrWhiteSpace(value))
-                {
-                    this.imagePath = value;
-                }
-            }
-        }
+        protected string imagePath;
+        public abstract string ImagePath{get;set;}
+       
         private List<int> rating = new List<int>();
         public int Rating
         {

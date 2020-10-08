@@ -1,6 +1,7 @@
 
 using System.Collections.Generic;
 using System;
+using CognitiveCoreUCU;
 
 
 namespace Library
@@ -20,6 +21,34 @@ namespace Library
                 if (!String.IsNullOrWhiteSpace(value))
                 {
                     this.bio = value;
+                }
+            }
+        }
+
+        public override string ImagePath
+        { 
+            get
+            {
+                return this.imagePath;
+            }
+            set
+            {
+                if(!String.IsNullOrWhiteSpace(value))
+                {
+                    CognitiveFace cogFace = new CognitiveFace("620e818a46524ceb92628cde08068242",false);
+                    cogFace.Recognize(value);
+                    if (cogFace.FaceFound && cogFace.SmileFound)
+                    {
+                        this.imagePath = value;
+                    }
+                    else
+                    {
+                        this.imagePath = "../Program/blank_face.jpeg";
+                    }
+                }
+                else
+                {
+                    this.imagePath = "../Program/blank_face.jpeg";
                 }
             }
         }

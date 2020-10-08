@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Library;
 
 namespace PII_Herencia
 {
@@ -8,33 +9,32 @@ namespace PII_Herencia
         static void Main(string[] args)
         {
             /*
-            En éste método deberas mostrar un ejemplo de funcionamiento de tu programa an pseudocódigo. A continuación te 
-            planteamos un ejemplo de como hacerlo. Esto no significa que te limites a hacer solamente esto, debes pensar 
-            en grande!
-
-            Usuario pasajero1 = nuevo Pasajero()
-            Usuario pasajero2 = nuevo Pasajero()
-            Usuario pasajero3 = nuevo Pasajero()
-            Usuario conductor1 = nuevo Conductor()
-            Usuario conductorPool1 = nuevo ConductorPool(maxPasajeros = 3)
-            UcuRideShare rideShare = nuevo UcuRideShare()
+            Passenger pasajero1 = new Passenger("Mateo", "Negrin", "8.765.432-1", "bill2.jpg");
+            Passenger pasajero2 = new Passenger("Alvaro", "Machado", "8.765.432-1", "main.jpg");
+            Passenger pasajero3 = new Passenger("Gonzalo", "Martinez", "8.765.432-1", "nicolas-cage.jpg");
+            Passenger pasajero4 = new Passenger("Mauricio", "Pacheco", "8.765.432-1", "nicolas-cage.jpg");
+            Driver conductor1 = new Driver("Baby", "Driver", "8.765.432-1", "nicolas-cage.jpg", "I like trains.");
+            Driver conductorPool1 = new Driver("Baby", "Driver", "8.765.432-1", "nicolas-cage.jpg", 3, "I don't like trains.");
+            RideSystem rideShare = new RideSystem();
             
-            rideShare.Add(conductor1)
-            Se publica en Twitter un nuevo conductor!
-
-            rideShare.Add(conductorPool1)
-            Se publica en Twitter un nuevo conductor!
-            
-            rideShare.Add(pasajero1)
-            Se publica en Twitter nuevo registro de pasajero!
-            
-            rideShare.Add(pasajero2)
-            Se publica en Twitter nuevo registro de pasajero!
-
-            rideShare.Add(pasajero3)
-            Se publica en Twitter nuevo registro de pasajero!
-
+            rideShare.AddDriver(conductor1);
+            rideShare.AddDriver(conductorPool1);
+            rideShare.AddPassenger(pasajero1);
+            rideShare.AddPassenger(pasajero2);
+            rideShare.AddPassenger(pasajero3);
+            rideShare.AddPassenger(pasajero4);
             */
+            Passenger pasajero1 = new Passenger("Mateo", "Negrin", "8.765.432-1", "Background.jpg");
+            Passenger pasajero2 = new Passenger("Alvaro", "Machado", "8.765.432-1", "main.jpg");
+            Driver conductor1 = new Driver("Baby", "Driver", "8.765.432-1", "bill2.jpg", "I like trains.");
+            Driver conductorPool1 = new Driver("Baby", "Driver", "8.765.432-1", "main.jpg", 3, "I don't like trains.");
+            Driver conductor2 = new Driver("Baby", "Driver", "8.765.432-1", "Background.jpg", "I like trains.");
+            RideSystem rideShare = new RideSystem();
+            rideShare.AddDriver(conductor1);
+            rideShare.AddDriver(conductor2);
+            rideShare.AddDriver(conductorPool1);
+            rideShare.AddPassenger(pasajero1);
+            rideShare.AddPassenger(pasajero2);
         }
     }
 }
