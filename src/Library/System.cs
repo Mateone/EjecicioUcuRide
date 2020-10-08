@@ -22,7 +22,7 @@ namespace Library
             if (!drivers.Contains(newDriver))
             {
                 drivers.Add(newDriver);
-                twitterImage.PublishToTwitter($"Welcome to Uber, I mean UCURide. Our new driver {newDriver.Name}.\n{newDriver.Bio}.", newDriver.Picture);
+                twitterImage.PublishToTwitter($"Welcome to Uber, I mean UCURide. Our new driver {newDriver.Name} {newDriver.Surname}.\nBio: {newDriver.Bio}.", newDriver.ImagePath);
             }
         }
 
@@ -31,7 +31,7 @@ namespace Library
             if (!passengers.Contains(newPassenger))
             {
                 passengers.Add(newPassenger);
-                twitterImage.PublishToTwitter($"Welcome to Uber, I mean UCURide. Our new passenger {newPassenger.Name}.", newPassenger.Picture);
+                twitterImage.PublishToTwitter($"Welcome to Uber, I mean UCURide. Our new passenger {newPassenger.Name} {newPassenger.Surname}.", newPassenger.ImagePath);
             }
         }
     }
