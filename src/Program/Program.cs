@@ -26,6 +26,7 @@ namespace PII_Herencia
             */
             Passenger pasajero1 = new Passenger("Mateo", "Negrin", "8.765.432-1", "Background.jpg");
             Passenger pasajero2 = new Passenger("Alvaro", "Machado", "8.765.432-1", "main.jpg");
+            Passenger pasajero3 = new Passenger("Mateo", "Negrin", "8.765.432-1", "nicolas-cage.jpg");
             Driver conductor1 = new Driver("Baby", "Driver", "8.765.432-1", "bill2.jpg", "I like trains.");
             Driver conductorPool1 = new Driver("Baby", "Driver", "8.765.432-1", "main.jpg", 3, "I don't like trains.");
             Driver conductor2 = new Driver("Baby", "Driver", "8.765.432-1", "Background.jpg", "I like trains.");
@@ -35,6 +36,7 @@ namespace PII_Herencia
             rideShare.AddDriver(conductorPool1);
             rideShare.AddPassenger(pasajero1);
             rideShare.AddPassenger(pasajero2);
+            rideShare.AddPassenger(pasajero3);
         }
     }
 }
