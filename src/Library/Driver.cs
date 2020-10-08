@@ -1,21 +1,54 @@
 
 using System.Collections.Generic;
+using System;
+
 
 namespace Library
 {
     public class Driver : Person
     {
+        private string bio;
+        public string Bio
+        {    
+            get
+            {
+                return this.bio;
+            }
+
+            set
+            {
+                if (!String.IsNullOrWhiteSpace(value))
+                {
+                    this.bio = value;
+                }
+            }
+        
+        }
 
         private int capacity;
+        public int Capacity 
+        {    
+            get
+            {
+                return this.capacity;
+            }
+
+            set
+            {
+                this.Capacity = value; 
+            }
+        
+        }
+        
 
         public List<Passenger> passengers;
 
-
-        public int Capacity {get; set;}
-        public Driver(string name, string surname, string id, int capacity)
+    
+        public Driver(string name, string surname, string id, int capacity, string bio)
         : base (name,surname, id)
         {
             this.Capacity = capacity;
+            this.Bio = bio;
         }
 
 
@@ -27,10 +60,11 @@ namespace Library
             }
         }
 
-        public void RemovePassenger(Passenger passenger, int rating)
+        public void RemovePassenger(Passenger passenger, int passengerRating, int driverRating)
         {
             passengers.Remove(passenger);
-            RatePassenger(passenger, rating);
+            RatePassenger(passenger, passengerRating);
+            passenger.RateDriver(this, driverRating);
         }
         public void RatePassenger(Passenger passenger, int rating)
         {
