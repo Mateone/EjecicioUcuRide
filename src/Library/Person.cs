@@ -1,11 +1,14 @@
 using System;
 using Library;
 using System.Collections.Generic;
+using CognitiveCoreUCU;
 
 namespace Library
 {
     public abstract class Person
     {
+        
+
         private string imagePath;
         public string ImagePath
         {
