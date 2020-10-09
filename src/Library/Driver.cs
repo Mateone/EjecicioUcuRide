@@ -95,6 +95,8 @@ namespace Library
             RatePassenger(passenger, passengerRating);
             passenger.RateDriver(this, driverRating);
         }
+
+        
         public void RatePassenger(Passenger passenger, int rating)
         {
             passenger.AddRating(rating);
